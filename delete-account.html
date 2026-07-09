@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원 탈퇴 페이지</title>
+</head>
+<body>
+<main>
+  <section aria-labelledby="withdraw-title">
+    <header>
+      <h1 id="withdraw-title">회원 탈퇴</h1>
+      <p>
+        회원 탈퇴 전 아래 내용을 반드시 확인해 주세요.
+      </p>
+    </header>
+
+    <section aria-labelledby="notice-title">
+      <h2 id="notice-title">탈퇴 시 유의사항</h2>
+
+      <ul>
+        <li>회원 탈퇴 후 계정은 복구할 수 없습니다.</li>
+        <li>보유 중인 포인트 및 쿠폰은 모두 소멸됩니다.</li>
+        <li>관련 법령에 따라 일부 정보는 일정 기간 보관될 수 있습니다.</li>
+        <li>진행 중인 서비스가 있는 경우 탈퇴가 제한될 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <form action="/withdraw" method="post">
+      <fieldset>
+        <legend>탈퇴 사유 (선택)</legend>
+
+        <label>
+          <input type="radio" name="reason" value="lack-of-features" />
+          원하는 기능이 없어요.
+        </label>
+
+        <label>
+          <input type="radio" name="reason" value="low-usage" />
+          이용 빈도가 낮아요.
+        </label>
+
+        <label>
+          <input type="radio" name="reason" value="other-service" />
+          다른 서비스를 이용하려고 해요.
+        </label>
+
+        <label>
+          <input type="radio" name="reason" value="privacy" />
+          개인정보가 걱정돼요.
+        </label>
+
+        <label>
+          <input type="radio" name="reason" value="inconvenient" />
+          서비스 이용이 불편했어요.
+        </label>
+
+        <label>
+          <input type="radio" name="reason" value="other" />
+          기타
+        </label>
+      </fieldset>
+
+      <div>
+        <label for="feedback">추가 의견 (선택)</label>
+        <textarea
+          id="feedback"
+          name="feedback"
+          rows="5"
+          placeholder="서비스 개선을 위한 의견을 남겨주세요."
+        ></textarea>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" name="agreement" required />
+          회원 탈퇴 시 계정을 복구할 수 없으며 관련 혜택이 모두 소멸되는 것을 확인했습니다.
+        </label>
+      </div>
+
+      <div>
+        <label for="password">비밀번호 확인</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      <footer>
+        <button type="button">취소</button>
+        <button type="submit">회원 탈퇴</button>
+      </footer>
+    </form>
+  </section>
+</main>
+</body>
+</html>
